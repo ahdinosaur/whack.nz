@@ -1,0 +1,19 @@
+{
+  "index": {
+    "title": "Introduction",
+    "type": "page",
+    "display": "hidden"
+  },
+  "join": {
+    "title": "Join",
+    "type": "page"
+  },
+  "tools": {
+    "title": "Tools",
+    "type": "page"
+  },
+  "about": {
+    "title": "About",
+    "type": "page"
+  }
+}
