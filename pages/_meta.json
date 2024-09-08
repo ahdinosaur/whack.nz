@@ -8,9 +8,12 @@
     "title": "Join",
     "type": "page"
   },
-  "tools": {
-    "title": "Tools",
+  "spaces": {
+    "title": "Spaces",
     "type": "page"
+  },
+  "tools": {
+    "title": "Tools"
   },
   "about": {
     "title": "About",
