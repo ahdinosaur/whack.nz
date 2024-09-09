@@ -3,7 +3,7 @@ import { type DocsThemeConfig, useConfig } from 'nextra-theme-docs'
 import React from 'react'
 
 const config: DocsThemeConfig = {
-  logo: <span>Wackerspace</span>,
+  logo: <span>WHACK.NZ</span>,
   project: {
     link: 'https://github.com/ahdinosaur/whack.nz',
   },
@@ -12,39 +12,29 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/ahdinosaur/whack.nz',
   useNextSeoProps() {
-    const { asPath } = useRouter()
-    if (asPath !== '/') {
-      return {
-        titleTemplate: '%s – Wellington Hackspace',
-      }
-    }
-  },
-  head: () => {
     const { asPath, defaultLocale, locale } = useRouter()
     const { frontMatter } = useConfig()
     const url = `https://whack.nz${defaultLocale === locale ? asPath : `/${locale}${asPath}`}`
 
-    return (
-      <>
-        <meta property="og:url" content={url} />
-        <meta property="og:title" content={frontMatter.title || 'Wellington Hackspace'} />
-        <meta
-          property="og:description"
-          content={
-            frontMatter.description ||
-            'Imagine a Wellington community makerspace! A space for anyone to make and learn with people and tools.'
-          }
-        />
-        <meta
-          property="og:image"
-          content="https://whack.nz/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmakerspace-sketch.efbfd34b.jpg&w=1080&q=75"
-        />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1080" />
-        <meta property="og:image:height" content="1080" />
-        <meta property="og:image:alt" content="An AI-generated sketch of a Makerspace" />
-      </>
-    )
+    return {
+      title: frontMatter.title ?? 'Wellington Hackspace',
+      description:
+        frontMatter.description ??
+        'Imagine a Wellington community space for anyone to make, learn, and hang out. Members have access to 3d printers, sewing machines, laser cutters, CNC machines, soldering stations, and more.',
+      openGraph: {
+        url,
+        siteName: 'Wellington Hackspace',
+        images: [
+          {
+            url: 'https://whack.nz/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhackspace.efbfd34b.jpg&w=1080&q=75',
+            type: 'image/jpeg',
+            height: 1080,
+            width: 1080,
+            alt: 'An AI-generated sketch of a Hackspace',
+          },
+        ],
+      },
+    }
   },
   footer: {
     text: 'Hacking is about making things, creating technology and solving problems with innovative solutions. Hackerspaces facilitate hacking through providing a community, a workshop and tools.',
