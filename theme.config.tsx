@@ -5,36 +5,39 @@ import React from 'react'
 const config: DocsThemeConfig = {
   logo: <span>Wackerspace</span>,
   project: {
-    link: 'https://github.com/wackerspace/wackerspace.com',
+    link: 'https://github.com/ahdinosaur/whack.nz',
   },
   chat: {
     link: 'https://discord.gg/S6RFwQYH',
   },
-  docsRepositoryBase: 'https://github.com/wackerspace/wackerspace.com',
+  docsRepositoryBase: 'https://github.com/ahdinosaur/whack.nz',
   useNextSeoProps() {
     const { asPath } = useRouter()
     if (asPath !== '/') {
       return {
-        titleTemplate: '%s – Wackerspace',
+        titleTemplate: '%s – Wellington Hackspace',
       }
     }
   },
   head: () => {
     const { asPath, defaultLocale, locale } = useRouter()
     const { frontMatter } = useConfig()
-    const url = `https://wackerspace.com${defaultLocale === locale ? asPath : `/${locale}${asPath}`}`
+    const url = `https://whack.nz${defaultLocale === locale ? asPath : `/${locale}${asPath}`}`
 
     return (
       <>
         <meta property="og:url" content={url} />
-        <meta property="og:title" content={frontMatter.title || 'Wackerspace'} />
+        <meta property="og:title" content={frontMatter.title || 'Wellington Hackspace'} />
         <meta
           property="og:description"
-          content={frontMatter.description || 'Imagine a Wellington hackerspace!'}
+          content={
+            frontMatter.description ||
+            'Imagine a Wellington community makerspace! A space for anyone to make and learn with people and tools.'
+          }
         />
         <meta
           property="og:image"
-          content="https://wackerspace.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmakerspace-sketch.efbfd34b.jpg&w=1080&q=75"
+          content="https://whack.nz/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmakerspace-sketch.efbfd34b.jpg&w=1080&q=75"
         />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1080" />

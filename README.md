@@ -1,8 +1,8 @@
-# "Wackerspace"
+# whack.nz
 
-The website for "Wackerspace", the Wellington Hackerspace.
+The website for the (so far imaginary) Wellington Hackspace: <https://whack.nz>.
 
-<https://wackerspace.com>
+For more about the hackspace on GitHub, see [`whacknz/whack`](https://github.com/whacknz/whack).
 
 ## Development
 
@@ -11,8 +11,8 @@ The website for "Wackerspace", the Wellington Hackerspace.
 With `git`, `node`, and `pnpm` installed:
 
 ```shell
-git clone git@github.com:wackerspace:wackerspace.com
-cd wackerspace.com
+git clone git@github.com:ahdinosaur:whack.nz
+cd whack.nz
 pnpm install
 ```
 
@@ -21,7 +21,6 @@ pnpm install
 ```shell
 pnpm run dev
 ```
-
 
 ### Lint & format
 
