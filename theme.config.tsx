@@ -12,9 +12,7 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/ahdinosaur/whack.nz',
   useNextSeoProps() {
-    const { asPath, defaultLocale, locale } = useRouter()
     const { frontMatter } = useConfig()
-    const url = `https://whack.nz${defaultLocale === locale ? asPath : `/${locale}${asPath}`}`
 
     return {
       title: frontMatter.title ?? 'Wellington Hackspace',
@@ -22,7 +20,9 @@ const config: DocsThemeConfig = {
         frontMatter.description ??
         'Imagine a Wellington community space for anyone to make, learn, and hang out. Members have access to 3d printers, sewing machines, laser cutters, CNC machines, soldering stations, and more.',
       openGraph: {
-        url,
+        type: 'website',
+        local: 'en_US',
+        url: 'https://whack.nz',
         siteName: 'Wellington Hackspace',
         images: [
           {
@@ -35,6 +35,10 @@ const config: DocsThemeConfig = {
         ],
       },
     }
+  },
+  // NOTE (mw): need to do this to remove default head
+  head() {
+    return <></>
   },
   footer: {
     text: 'Hacking is about making things, creating technology and solving problems with innovative solutions. Hackerspaces facilitate hacking through providing a community, a workshop and tools.',
