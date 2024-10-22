@@ -7,7 +7,7 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/whacknz/whack',
   },
   chat: {
-    link: 'https://discord.gg/S6RFwQYH',
+    link: 'https://discord.gg/F8HaruhDM5',
   },
   docsRepositoryBase: 'https://github.com/ahdinosaur/whack.nz',
   useNextSeoProps() {
